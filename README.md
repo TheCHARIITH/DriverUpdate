@@ -1,141 +1,116 @@
-# Windows Driver Updater 🚀
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=flat&logo=powershell&logoColor=white)](https://github.com/PowerShell/PowerShell)
-[![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+# Windows Driver Updater v3.0 🚀
 
-A modern, user-friendly PowerShell GUI application for updating Windows drivers automatically. Built with efficiency and simplicity in mind.
+A modern, user-friendly **PowerShell GUI application** for updating Windows drivers automatically. Version **3.0** introduces multi-language support, advanced filtering, scheduling, dark/light themes, and improved usability.
 
-![Driver Updater Screenshot](https://raw.githubusercontent.com/CHXRITH/DriverUpdate/main/screenshot.png)
+![Driver Updater Screenshot](https://github.com/user-attachments/assets/e97ee19f-903b-4162-8c95-585122432cae)
 
-## 🌟 Features
 
-- **Modern GUI Interface**: Clean and intuitive design
-- **Real-time Progress Tracking**: Visual progress bar and detailed status updates
-- **Automatic Module Installation**: Auto-installs required PowerShell modules
-- **Smart Error Handling**: Comprehensive error detection and reporting
-- **One-Click Installation**: Quick installation via PowerShell command
-- **Administrator Rights Check**: Automatic verification of required permissions
-- **Cancel Operation Support**: Safely cancel ongoing updates
-- **Detailed Logging**: Real-time update status and driver information
+---
 
 ## 🚀 Quick Installation
 
-Run this command in PowerShell (as Administrator):
+Run this command in PowerShell as **Administrator** to launch the updater immediately:
 
 ```powershell
-irm https://raw.githubusercontent.com/CHXRITH/DriverUpdate/main/DriverUpdate.ps1 | iex
+irm https://raw.githubusercontent.com/TheCHARIITH/DriverUpdate/main/DriveUpdateV3.ps1 | iex
+
 ```
-
-## 📋 Prerequisites
-
-- Windows 10 or Windows 11
-- PowerShell 5.1 or later
-- Administrator privileges
-- Internet connection
-
-## 📥 Manual Installation
-
-1. Clone the repository:
-```powershell
-git clone https://github.com/CHXRITH/DriverUpdate.git
-```
-
-2. Navigate to the directory:
-```powershell
-cd DriverUpdate
-```
-
-3. Run the script as Administrator:
-```powershell
-powershell -ExecutionPolicy Bypass -File DriverUpdate.ps1
-```
-
-## 🛠️ How It Works
-
-1. **Administrator Check**: Verifies administrative privileges
-2. **Module Installation**: Automatically installs required PSWindowsUpdate module
-3. **Driver Scan**: Scans system for available driver updates
-4. **Update Process**: Downloads and installs available updates
-5. **Status Report**: Provides detailed completion status
-
-## 🔒 Security Features
-
-- Administrator privileges verification
-- Secure PowerShell module installation
-- Microsoft-signed driver verification
-- Safe update process with rollback capability
-- Protected execution policy handling
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b new-feature`
-3. Commit changes: `git commit -am 'Add new feature'`
-4. Push to branch: `git push origin new-feature`
-5. Submit a Pull Request
-
-## 🐛 Bug Reports
-
-Found a bug? Please open an issue with:
-- Detailed description of the problem
-- Steps to reproduce
-- Expected vs actual behavior
-- Screenshots if applicable
-- System information
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- PSWindowsUpdate module developers
-- PowerShell community
-- Windows Update API
-- All contributors and testers
-
-## 👨‍💻 Author
-
-**CHXRITH**
-- GitHub: [@CHXRITH](https://github.com/CHXRITH)
-
-## 📊 Version History
-
-- **v1.0.0** (2024-01-20)
-  - Initial release
-  - Basic GUI implementation
-  - Driver update functionality
-  - Error handling
-  - Progress tracking
-
-## 🔮 Future Plans
-
-- [ ] Dark mode support
-- [ ] Multiple language support
-- [ ] Scheduled updates
-- [ ] Backup and restore points
-- [ ] Update history logging
-- [ ] Network proxy support
-- [ ] Silent mode operation
-- [ ] Custom update filters
-
-## 💡 Usage Tips
-
-1. **Always backup**: Create a system restore point before updating drivers
-2. **Review updates**: Check the list of available updates before installing
-3. **Stable connection**: Ensure stable internet during the update process
-4. **System requirements**: Close other applications during updates
-5. **Recovery preparation**: Have recovery media ready just in case
-
-## ⚠️ Important Notes
-
-- Always run as administrator
-- Requires reliable internet connection
-- Some updates may require system restart
-- Compatible with Windows 10 and 11 only
-- Updates from Microsoft official sources only
 
 ---
-Made with 💜 by CHXRITH | Last updated: October 2024
+
+## ✨ What's New in v3.0
+
+### **🎨 Modernized UI/UX**
+
+* **Dual-Theme Support**: Toggle between **Dark Mode** and **Light Mode** with a professional color palette.
+* **Localized Experience**: Full support for 6 languages: English, Spanish, French, German, Portuguese, and Italian.
+* **Enhanced Components**: Rounded corners, responsive layouts, and a real-time status bar with version tracking.
+
+### **🛠️ Advanced Tools & Automation**
+
+* **Task Scheduler**: Schedule automatic driver checks (Daily, Weekly, or Monthly) directly from the Tools menu.
+* **System Protection**: Built-in "Create Restore Point" functionality before performing driver updates.
+* **Network Proxy**: Integrated support for HTTP/HTTPS proxies for restricted network environments.
+* **Advanced Filtering**: Filter driver scans by **Class** (Display, Audio, Network) or **Manufacturer**.
+
+### **📊 Management & Logging**
+
+* **Persistent Settings**: All preferences are saved in a structured JSON file at `%USERPROFILE%\Documents\The CHARITH_DriverUpdater\`.
+* **Update History**: A detailed log of the last 100 tasks, including timestamps, status, and specific driver details.
+* **Enhanced Silent Mode**: Perfect for system admins; run tasks via CLI without ever opening the GUI.
+
+---
+
+## 📋 Command-Line Parameters
+
+| Parameter | Description |
+| --- | --- |
+| `-Silent` | Run tasks in the background without the GUI. |
+| `-Task` | Define silent task: `WindowsUpdate`, `CheckDriverUpdates`, or `ScanDrivers`. |
+| `-Language` | Force a specific language (e.g., `es`, `fr`, `de`). |
+| `-ProxyAddress` | Set a custom proxy URL for the update session. |
+| `-FilterClass` | Only process drivers belonging to a specific class. |
+
+---
+
+## 📥 Manual Setup
+
+1. **Clone the repository:**
+```powershell
+git clone https://github.com/TheCHARIITH/DriverUpdate.git
+
+```
+
+
+2. **Navigate to the folder:**
+```powershell
+cd DriverUpdate
+
+```
+
+
+3. **Execute:**
+```powershell
+powershell -ExecutionPolicy Bypass -File DriveUpdateV3.ps1
+
+```
+
+
+
+---
+
+## 🛡️ Safety & Requirements
+
+> [!IMPORTANT]
+> **Administrator Privileges** are required to scan and install system drivers.
+> Always ensure you have a stable internet connection before beginning the update process.
+
+* **OS**: Windows 10 or Windows 11 (Latest builds recommended).
+* **PowerShell**: 5.1 or higher.
+* **Dependencies**: The script automatically handles the `PSWindowsUpdate` module installation.
+
+---
+
+## 🤝 Contributing & Feedback
+
+Contributions are what make the open-source community such an amazing place.
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`).
+3. Commit your Changes (`git commit -m 'Add NewFeature'`).
+4. Push to the Branch (`git push origin feature/NewFeature`).
+5. Open a **Pull Request**.
+
+---
+
+## ⚖️ License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+**Author:** [TheCHARITH](https://github.com/TheCHARIITH)
+
+**Organization:** [Simplest Circuits](https://github.com/simplest-circuits)
+
+---
+
+**Made with 💜 and too much ☕ by TheCHARITH** | *Version 3.0.0 • 2026*
